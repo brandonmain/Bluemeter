@@ -3,45 +3,138 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EF1F6C6654942C586A2FAEE /* libPods-Bluemeter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40B259D28DDC41CDB0DB475 /* libPods-Bluemeter.a */; };
+		CA0432D023CD092E00EA2A27 /* devicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0432CF23CD092E00EA2A27 /* devicesTableViewController.swift */; };
+		CA3F696723D0FD5500358328 /* measurementChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F696623D0FD5500358328 /* measurementChartView.swift */; };
+		CA9B792223DD664C0084FFF3 /* BluemeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B792123DD664C0084FFF3 /* BluemeterUITests.swift */; };
+		CA9B792A23DD7DB70084FFF3 /* BluetoothConnectionManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B792923DD7DB70084FFF3 /* BluetoothConnectionManagerTest.swift */; };
+		CAC59C5E23B07D7E00D6F063 /* BluetoothConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC59C5D23B07D7D00D6F063 /* BluetoothConnectionManager.swift */; };
 		CACAB47323AC7BAD00DD0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB47223AC7BAD00DD0DC8 /* AppDelegate.swift */; };
 		CACAB47523AC7BAD00DD0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB47423AC7BAD00DD0DC8 /* SceneDelegate.swift */; };
-		CACAB47723AC7BAD00DD0DC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB47623AC7BAD00DD0DC8 /* ViewController.swift */; };
+		CACAB47723AC7BAD00DD0DC8 /* rootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB47623AC7BAD00DD0DC8 /* rootViewController.swift */; };
 		CACAB47A23AC7BAD00DD0DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACAB47823AC7BAD00DD0DC8 /* Main.storyboard */; };
 		CACAB47C23AC7BB000DD0DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACAB47B23AC7BB000DD0DC8 /* Assets.xcassets */; };
 		CACAB47F23AC7BB000DD0DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACAB47D23AC7BB000DD0DC8 /* LaunchScreen.storyboard */; };
+		CAFE124023B6A1F20046BF53 /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE123F23B6A1F20046BF53 /* menuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CA9B791623DD64810084FFF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACAB46723AC7BAD00DD0DC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACAB46E23AC7BAD00DD0DC8;
+			remoteInfo = Bluemeter;
+		};
+		CA9B792423DD664C0084FFF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACAB46723AC7BAD00DD0DC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACAB46E23AC7BAD00DD0DC8;
+			remoteInfo = Bluemeter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		11F2CD2F8D9978BA6BE625C5 /* Pods-Bluemeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemeter.debug.xcconfig"; path = "Target Support Files/Pods-Bluemeter/Pods-Bluemeter.debug.xcconfig"; sourceTree = "<group>"; };
+		CA0432CF23CD092E00EA2A27 /* devicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devicesTableViewController.swift; sourceTree = "<group>"; };
+		CA37152B240C67F100C7234B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3F696623D0FD5500358328 /* measurementChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = measurementChartView.swift; sourceTree = "<group>"; };
+		CA9B791123DD64810084FFF3 /* BluemeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluemeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9B791523DD64810084FFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9B791F23DD664C0084FFF3 /* BluemeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluemeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9B792123DD664C0084FFF3 /* BluemeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluemeterUITests.swift; sourceTree = "<group>"; };
+		CA9B792323DD664C0084FFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9B792923DD7DB70084FFF3 /* BluetoothConnectionManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionManagerTest.swift; sourceTree = "<group>"; };
+		CAC59C5D23B07D7D00D6F063 /* BluetoothConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothConnectionManager.swift; path = "../../BMM-App/BMM-App/BluetoothConnectionManager.swift"; sourceTree = "<group>"; };
 		CACAB46F23AC7BAD00DD0DC8 /* Bluemeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluemeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACAB47223AC7BAD00DD0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACAB47423AC7BAD00DD0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CACAB47623AC7BAD00DD0DC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CACAB47623AC7BAD00DD0DC8 /* rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rootViewController.swift; sourceTree = "<group>"; };
 		CACAB47923AC7BAD00DD0DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CACAB47B23AC7BB000DD0DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CACAB47E23AC7BB000DD0DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CACAB48023AC7BB000DD0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFE123F23B6A1F20046BF53 /* menuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
+		F40B259D28DDC41CDB0DB475 /* libPods-Bluemeter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bluemeter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEDEADF0D978542EF3C21B4E /* Pods-Bluemeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemeter.release.xcconfig"; path = "Target Support Files/Pods-Bluemeter/Pods-Bluemeter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CACAB46C23AC7BAD00DD0DC8 /* Frameworks */ = {
+		CA9B790E23DD64810084FFF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA9B791C23DD664C0084FFF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB46C23AC7BAD00DD0DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF1F6C6654942C586A2FAEE /* libPods-Bluemeter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502363D13242CBA08B4687C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11F2CD2F8D9978BA6BE625C5 /* Pods-Bluemeter.debug.xcconfig */,
+				FEDEADF0D978542EF3C21B4E /* Pods-Bluemeter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5B0A05EB0FDDAE018CB08816 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA37152B240C67F100C7234B /* Charts.framework */,
+				F40B259D28DDC41CDB0DB475 /* libPods-Bluemeter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA9B791223DD64810084FFF3 /* BluemeterTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B792923DD7DB70084FFF3 /* BluetoothConnectionManagerTest.swift */,
+				CA9B791523DD64810084FFF3 /* Info.plist */,
+			);
+			path = BluemeterTests;
+			sourceTree = "<group>";
+		};
+		CA9B792023DD664C0084FFF3 /* BluemeterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B792123DD664C0084FFF3 /* BluemeterUITests.swift */,
+				CA9B792323DD664C0084FFF3 /* Info.plist */,
+			);
+			path = BluemeterUITests;
+			sourceTree = "<group>";
+		};
 		CACAB46623AC7BAD00DD0DC8 = {
 			isa = PBXGroup;
 			children = (
 				CACAB47123AC7BAD00DD0DC8 /* Bluemeter */,
+				CA9B791223DD64810084FFF3 /* BluemeterTests */,
+				CA9B792023DD664C0084FFF3 /* BluemeterUITests */,
 				CACAB47023AC7BAD00DD0DC8 /* Products */,
+				502363D13242CBA08B4687C4 /* Pods */,
+				5B0A05EB0FDDAE018CB08816 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				CACAB46F23AC7BAD00DD0DC8 /* Bluemeter.app */,
+				CA9B791123DD64810084FFF3 /* BluemeterTests.xctest */,
+				CA9B791F23DD664C0084FFF3 /* BluemeterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,11 +153,15 @@
 			children = (
 				CACAB47223AC7BAD00DD0DC8 /* AppDelegate.swift */,
 				CACAB47423AC7BAD00DD0DC8 /* SceneDelegate.swift */,
-				CACAB47623AC7BAD00DD0DC8 /* ViewController.swift */,
-				CACAB47823AC7BAD00DD0DC8 /* Main.storyboard */,
-				CACAB47B23AC7BB000DD0DC8 /* Assets.xcassets */,
 				CACAB47D23AC7BB000DD0DC8 /* LaunchScreen.storyboard */,
 				CACAB48023AC7BB000DD0DC8 /* Info.plist */,
+				CACAB47B23AC7BB000DD0DC8 /* Assets.xcassets */,
+				CACAB47823AC7BAD00DD0DC8 /* Main.storyboard */,
+				CACAB47623AC7BAD00DD0DC8 /* rootViewController.swift */,
+				CAFE123F23B6A1F20046BF53 /* menuTableViewController.swift */,
+				CA0432CF23CD092E00EA2A27 /* devicesTableViewController.swift */,
+				CA3F696623D0FD5500358328 /* measurementChartView.swift */,
+				CAC59C5D23B07D7D00D6F063 /* BluetoothConnectionManager.swift */,
 			);
 			path = Bluemeter;
 			sourceTree = "<group>";
@@ -70,10 +169,47 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CA9B791023DD64810084FFF3 /* BluemeterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9B791A23DD64810084FFF3 /* Build configuration list for PBXNativeTarget "BluemeterTests" */;
+			buildPhases = (
+				CA9B790D23DD64810084FFF3 /* Sources */,
+				CA9B790E23DD64810084FFF3 /* Frameworks */,
+				CA9B790F23DD64810084FFF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA9B791723DD64810084FFF3 /* PBXTargetDependency */,
+			);
+			name = BluemeterTests;
+			productName = BluemeterTests;
+			productReference = CA9B791123DD64810084FFF3 /* BluemeterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA9B791E23DD664C0084FFF3 /* BluemeterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9B792623DD664C0084FFF3 /* Build configuration list for PBXNativeTarget "BluemeterUITests" */;
+			buildPhases = (
+				CA9B791B23DD664C0084FFF3 /* Sources */,
+				CA9B791C23DD664C0084FFF3 /* Frameworks */,
+				CA9B791D23DD664C0084FFF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA9B792523DD664C0084FFF3 /* PBXTargetDependency */,
+			);
+			name = BluemeterUITests;
+			productName = BluemeterUITests;
+			productReference = CA9B791F23DD664C0084FFF3 /* BluemeterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CACAB46E23AC7BAD00DD0DC8 /* Bluemeter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CACAB48323AC7BB000DD0DC8 /* Build configuration list for PBXNativeTarget "Bluemeter" */;
 			buildPhases = (
+				8C4224DF83313524B29E7AB2 /* [CP] Check Pods Manifest.lock */,
 				CACAB46B23AC7BAD00DD0DC8 /* Sources */,
 				CACAB46C23AC7BAD00DD0DC8 /* Frameworks */,
 				CACAB46D23AC7BAD00DD0DC8 /* Resources */,
@@ -97,6 +233,15 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Brandon Main";
 				TargetAttributes = {
+					CA9B791023DD64810084FFF3 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+						TestTargetID = CACAB46E23AC7BAD00DD0DC8;
+					};
+					CA9B791E23DD664C0084FFF3 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = CACAB46E23AC7BAD00DD0DC8;
+					};
 					CACAB46E23AC7BAD00DD0DC8 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -116,11 +261,27 @@
 			projectRoot = "";
 			targets = (
 				CACAB46E23AC7BAD00DD0DC8 /* Bluemeter */,
+				CA9B791023DD64810084FFF3 /* BluemeterTests */,
+				CA9B791E23DD664C0084FFF3 /* BluemeterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CA9B790F23DD64810084FFF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B791D23DD664C0084FFF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CACAB46D23AC7BAD00DD0DC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,18 +294,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C4224DF83313524B29E7AB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bluemeter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		CA9B790D23DD64810084FFF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B792A23DD7DB70084FFF3 /* BluetoothConnectionManagerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B791B23DD664C0084FFF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B792223DD664C0084FFF3 /* BluemeterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CACAB46B23AC7BAD00DD0DC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACAB47723AC7BAD00DD0DC8 /* ViewController.swift in Sources */,
+				CAC59C5E23B07D7E00D6F063 /* BluetoothConnectionManager.swift in Sources */,
+				CACAB47723AC7BAD00DD0DC8 /* rootViewController.swift in Sources */,
+				CA3F696723D0FD5500358328 /* measurementChartView.swift in Sources */,
+				CA0432D023CD092E00EA2A27 /* devicesTableViewController.swift in Sources */,
+				CAFE124023B6A1F20046BF53 /* menuTableViewController.swift in Sources */,
 				CACAB47323AC7BAD00DD0DC8 /* AppDelegate.swift in Sources */,
 				CACAB47523AC7BAD00DD0DC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA9B791723DD64810084FFF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACAB46E23AC7BAD00DD0DC8 /* Bluemeter */;
+			targetProxy = CA9B791623DD64810084FFF3 /* PBXContainerItemProxy */;
+		};
+		CA9B792523DD664C0084FFF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACAB46E23AC7BAD00DD0DC8 /* Bluemeter */;
+			targetProxy = CA9B792423DD664C0084FFF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CACAB47823AC7BAD00DD0DC8 /* Main.storyboard */ = {
@@ -166,6 +385,87 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CA9B791823DD64810084FFF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53A4RUFC65;
+				INFOPLIST_FILE = BluemeterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmain.BluemeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bluemeter.app/Bluemeter";
+			};
+			name = Debug;
+		};
+		CA9B791923DD64810084FFF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53A4RUFC65;
+				INFOPLIST_FILE = BluemeterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmain.BluemeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bluemeter.app/Bluemeter";
+			};
+			name = Release;
+		};
+		CA9B792723DD664C0084FFF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53A4RUFC65;
+				INFOPLIST_FILE = BluemeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmain.BluemeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bluemeter;
+			};
+			name = Debug;
+		};
+		CA9B792823DD664C0084FFF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53A4RUFC65;
+				INFOPLIST_FILE = BluemeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmain.BluemeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bluemeter;
+			};
+			name = Release;
+		};
 		CACAB48123AC7BB000DD0DC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,6 +582,7 @@
 		};
 		CACAB48423AC7BB000DD0DC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F2CD2F8D9978BA6BE625C5 /* Pods-Bluemeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +601,7 @@
 		};
 		CACAB48523AC7BB000DD0DC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEDEADF0D978542EF3C21B4E /* Pods-Bluemeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +621,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CA9B791A23DD64810084FFF3 /* Build configuration list for PBXNativeTarget "BluemeterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B791823DD64810084FFF3 /* Debug */,
+				CA9B791923DD64810084FFF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9B792623DD664C0084FFF3 /* Build configuration list for PBXNativeTarget "BluemeterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B792723DD664C0084FFF3 /* Debug */,
+				CA9B792823DD664C0084FFF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CACAB46A23AC7BAD00DD0DC8 /* Build configuration list for PBXProject "Bluemeter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
