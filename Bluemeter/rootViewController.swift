@@ -8,8 +8,32 @@
 
 import UIKit
 import Charts
+import MetalKit
 
-class rootViewController: UIViewController, ChartViewDelegate {
+class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
+    
+    // MARK: - Protocol Delegate Methods
+    
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        
+    }
+    
+    func draw(in view: MTKView) {
+        let renderPassDescriptor = view.currentRenderPassDescriptor;
+        if (renderPassDescriptor == nil)
+        {
+            return;
+        }
+    
+        let commandBuffer = commandQueue.makeCommandBuffer()!
+        let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor!)
+        commandEncoder?.endEncoding()
+        
+        let drawable = view.currentDrawable
+        commandBuffer.present(drawable!)
+        commandBuffer.commit()
+    }
+    
     
     // MARK: - Variable Declarations
     @IBOutlet weak var containerView: UIView!
@@ -19,7 +43,8 @@ class rootViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var menubutton: UIButton!
     @IBOutlet weak var measurementReading: UILabel!
     @IBOutlet weak var connectionIcon: UIButton!
-    @IBOutlet var measurementChart: measurementChartView!
+    @IBOutlet weak var metalView: MTKView!
+    @IBOutlet weak var measurementChart: measurementChartView!
     @IBOutlet weak var timeDivisionLabel: UILabel!
     @IBOutlet weak var timeStepper: UIStepper!
     @IBOutlet weak var start_stopButton: UIButton!
@@ -30,6 +55,7 @@ class rootViewController: UIViewController, ChartViewDelegate {
     let primaryColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.5294, alpha: 1.0) // The primary blue color the application uses.
     var bleManager : BluetoothConnectionManager!
     var start_stop : Bool = false
+    var commandQueue: MTLCommandQueue!
     
     // MARK: - Action Outlets
     
@@ -179,6 +205,18 @@ class rootViewController: UIViewController, ChartViewDelegate {
         // Start BLE manager
         bleManager = BluetoothConnectionManager()
         
+        // Metal view setup
+        metalView.device = MTLCreateSystemDefaultDevice()
+        if self.traitCollection.userInterfaceStyle == .dark {
+            metalView.clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0)
+        } else {
+            metalView.clearColor = MTLClearColorMake(255.0, 255.0, 255.0, 0)
+        }
+        metalView.enableSetNeedsDisplay = true
+        metalView.delegate = self
+        commandQueue = metalView.device?.makeCommandQueue()
+        
+        
         // Continously check every 2 seconds to see if we're still connected
         // to bluetooth or not, then update connected icon
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
@@ -295,7 +333,7 @@ class rootViewController: UIViewController, ChartViewDelegate {
         }
         
         let startTime = Date().timeIntervalSinceReferenceDate
-        Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true, block: { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { timer in
             if self.start_stop {
                 self.updateTime(start: startTime)
             } else {
@@ -317,7 +355,7 @@ class rootViewController: UIViewController, ChartViewDelegate {
         // Display the time string to a label in our view controller
         self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", minutes, seconds, Int(milliseconds)!)
         // Display mesurement
-        let measurement = processBluetoothData(dataString: bleManager.getData())
+        let measurement = Double.random(in: 0 ..< 10)//processBluetoothData(dataString: bleManager.getData())
         updateMeasurementReading(measurement: measurement)
         let newDataEntry = ChartDataEntry(x: time/timeStepper.value*1000, y: measurement)
         self.measurementChart.updateChartView(with: newDataEntry, dataEntries: &self.measurementChart.chartDataEntry)

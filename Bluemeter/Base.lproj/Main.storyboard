@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ELo-Jc-Z8c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ELo-Jc-Z8c">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,9 +111,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tx7-Hl-gDp">
                                 <rect key="frame" x="20" y="361" width="374" height="481"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-3G-jz3" customClass="measurementChartView" customModule="Bluemeter" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-3G-jz3" userLabel="Metal View" customClass="MTKView">
                                         <rect key="frame" x="0.0" y="20" width="374" height="274"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwH-ml-fji" customClass="measurementChartView" customModule="Bluemeter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="274"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="lwH-ml-fji" firstAttribute="top" secondItem="Ksx-3G-jz3" secondAttribute="top" id="0yV-a2-4Ar"/>
+                                            <constraint firstAttribute="trailing" secondItem="lwH-ml-fji" secondAttribute="trailing" id="CWz-Ae-icz"/>
+                                            <constraint firstItem="lwH-ml-fji" firstAttribute="leading" secondItem="Ksx-3G-jz3" secondAttribute="leading" id="IR0-fW-shB"/>
+                                            <constraint firstAttribute="bottom" secondItem="lwH-ml-fji" secondAttribute="bottom" id="ygT-jI-5A1"/>
+                                        </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6by-MU-3F7">
                                         <rect key="frame" x="20" y="405" width="58" height="56"/>
@@ -225,11 +237,12 @@
                     <connections>
                         <outlet property="connectionIcon" destination="le4-vT-ncW" id="wSz-Gj-V2b"/>
                         <outlet property="containerView" destination="Tx7-Hl-gDp" id="J4a-lH-iWh"/>
-                        <outlet property="measurementChart" destination="Ksx-3G-jz3" id="npf-2L-YQk"/>
+                        <outlet property="measurementChart" destination="lwH-ml-fji" id="Zqo-no-ydR"/>
                         <outlet property="measurementReading" destination="bO6-pW-UHA" id="CTy-r9-ibv"/>
                         <outlet property="measurementReadingView" destination="Boa-Ch-u8h" id="6Z4-74-f5f"/>
                         <outlet property="measurementSelector" destination="YTt-ro-pDB" id="fKN-2P-6hd"/>
                         <outlet property="menubutton" destination="szW-1y-Yc3" id="tWx-W8-KDO"/>
+                        <outlet property="metalView" destination="Ksx-3G-jz3" id="jej-0z-pwY"/>
                         <outlet property="start_stopButton" destination="0ML-7t-dsc" id="oou-VM-5u7"/>
                         <outlet property="timeDivisionLabel" destination="Mfe-Iu-FGS" id="BgK-X3-W2e"/>
                         <outlet property="timeLabel" destination="57L-zi-rXe" id="Gan-2r-jAh"/>
@@ -329,9 +342,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.seal" catalog="system" width="64" height="60"/>
-        <image name="largecircle.fill.circle" catalog="system" width="64" height="60"/>
-        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
-        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="checkmark.seal" catalog="system" width="128" height="122"/>
+        <image name="largecircle.fill.circle" catalog="system" width="128" height="121"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import MetalKit
 
 class measurementChartView: LineChartView {
     
