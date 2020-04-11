@@ -1,0 +1,6 @@
+module Pods_Bluemeter {
+  umbrella header "Pods-Bluemeter-umbrella.h"
+
+  export *
+  module * { export * }
+}
