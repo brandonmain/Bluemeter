@@ -14,10 +14,12 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
     
     // MARK: - Protocol Delegate Methods
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        
-    }
     
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
+    
+    /**
+        Delegate Method that draws the contained view using GPU acceleration.
+     */
     func draw(in view: MTKView) {
         let renderPassDescriptor = view.currentRenderPassDescriptor;
         if (renderPassDescriptor == nil)
@@ -51,7 +53,6 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var yAxisDivisonLabel: UILabel!
     @IBOutlet weak var yAxisStepper: UIStepper!
-    
     let primaryColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.5294, alpha: 1.0) // The primary blue color the application uses.
     var bleManager : BluetoothConnectionManager!
     var start_stop : Bool = false
@@ -89,6 +90,11 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         measurementChart.notifyDataSetChanged()
     }
     
+    /**
+     Action outlet that handles when the yAxisStepper is tapped.
+     - Changes the value of the yAxisDivisionLabel.
+     - Changes the y-Axis divisions of the measurement graph.
+    */
     @IBAction func yAxisStepperTapped(_ sender: UIStepper) {
         if measurementSelector.selectedSegmentIndex == 0 {
             yAxisDivisonLabel.text = String(format: "%d V", Int(sender.value))
@@ -324,7 +330,7 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
     }
     
     /**
-    Function that starts and stops the Timer for the time label.
+        Function that starts and stops the Timer for the time label.
      */
     func start_stopTimer() {
         if !start_stop {
@@ -361,6 +367,9 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         self.measurementChart.updateChartView(with: newDataEntry, dataEntries: &self.measurementChart.chartDataEntry)
     }
     
+    /**
+        Function that resets the measurement chart.
+     */
     func resetMeasurementChart() {
         measurementChart.delegate = self
         measurementChart.chartData?.notifyDataChanged()
@@ -374,6 +383,9 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         }
     }
     
+    /**
+        Function that gets the measurement selected by the mesurement selector.
+     */
     func getSelectedMeasurement() -> String {
         if measurementSelector.selectedSegmentIndex == 0 {
             return "Voltage"
@@ -384,6 +396,10 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         }
     }
     
+    /**
+        Function that updates the measurement reading label each time it's called.
+        - Parameter measurement: A floating point value of the passed in measurement.
+     */
     func updateMeasurementReading(measurement: Double) {
         if measurementSelector.selectedSegmentIndex == 0 {
             measurementReading.text = String(format: "%.2f V", measurement)
@@ -394,6 +410,9 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         }
     }
     
+    /**
+        Function that parses the data obtained from the bluetooth communication.
+     */
     func processBluetoothData(dataString: String) -> Double {
         if dataString.contains("|") {
             let strArr = dataString.components(separatedBy: ["|"])

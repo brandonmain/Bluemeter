@@ -12,12 +12,20 @@ import MetalKit
 
 class measurementChartView: LineChartView {
     
+    // MARK: - Variable Declarations
     var chartDataEntry : [ChartDataEntry] = []
     var time : [String] = []
     var measurements : [String] = []
     var chartData : LineChartData!
     var chartDataSet : LineChartDataSet!
     
+    // MARK: - Class Methods
+    /**
+        The main function that sets the charts display properties such as color and and size.
+     
+        - Parameter axisMax: Floating point values of the x-axis max size.
+        - Parameter label: A String of the label to be displayed on the x-axis.
+     */
     func setLineChart(axisMax : Double, label : String) {
         self.xAxis.removeAllLimitLines()
         self.noDataText = "No data"
@@ -61,6 +69,11 @@ class measurementChartView: LineChartView {
         self.data = chartData
     }
     
+    /**
+        Function that updates the chart with new ChartData.
+        
+        - Parameter newDataEntry: A new data point that is appended to the dataEntries                  variable and displayed on the chart.
+     */
     func updateChartView(with newDataEntry: ChartDataEntry, dataEntries: inout [ChartDataEntry]) {
         if dataEntries.count > 0 {
             if newDataEntry.x < dataEntries[dataEntries.count-1].x {

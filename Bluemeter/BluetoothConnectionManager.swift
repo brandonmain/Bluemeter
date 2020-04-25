@@ -11,20 +11,20 @@ import CoreBluetooth
 
 class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralManagerDelegate {
     
-    // Properties
+    // MARK: - Variable Declarations
     private var centralManager: CBCentralManager!
     private var peripheral: CBPeripheral!
-    
     public static let bleServiceUUID = CBUUID.init(string: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFF0000")
     public static let bleVoltageCharacteristicUUID = CBUUID.init(string: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFF0001")
-    
-    // Array to contain names of BLE devices to connect to.
     public var scannedBLEDevices: [CBPeripheral] = []
-    
     public var retrievingData : Bool = false
-    
     private var data : String?
     
+    // MARK: - Class Methods
+    
+    /**
+        Overriding the default constructor.
+     */
     public override init() {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -35,7 +35,9 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
     }
     
     
-    // Handles BT Turning On/Off
+    /**
+        Function that handles the state of the BLE central manager.
+     */
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch (central.state) {
         case .unsupported:
@@ -65,7 +67,9 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
     }
     
     
-    // Handles the result of the scan
+    /**
+        Function that handles the result of the central manager's BLE scan.
+     */
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("Peripheral Name: \(String(describing: peripheral.name))  RSSI: \(String(RSSI.doubleValue))")
         self.peripheral = peripheral
@@ -88,8 +92,9 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    
-    // The handler if we do connect successfully
+    /**
+        Function that handles if BLE successfully connects.
+     */
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         if peripheral == self.peripheral {
             print("Connected to your BLE Board")
@@ -102,12 +107,17 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
+    /**
+       Function that handles if BLE successfully disconnects.
+    */
     public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         self.centralManager.connect(self.peripheral, options: nil)
         
     }
     
-    // Handles discovery event
+    /**
+       Function that handles if BLE peripherals are discovered.
+    */
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let services = peripheral.services {
             for service in services {
@@ -120,7 +130,9 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    // Handling discovery of characteristics
+    /**
+       Function that handles if BLE peripheral characteristics are discovered..
+    */
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characteristics = service.characteristics {
             for characteristic in characteristics {
@@ -141,11 +153,14 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
-    }
+    /**
+       Function that handles if BLE peripheral charecteristic is updated.
+    */
+    public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {}
     
-    // Function to check if a peripheral is connected or not
+    /**
+       Function to check if a peripheral is connected or not
+    */
     public func isConnected() -> Bool {
         // Connected
         if peripheral != nil {
@@ -159,12 +174,16 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    // Stops the scanning for peripherals
+    /**
+       Function that stops the scanning for peripherals.
+    */
     @objc private func cancelScan() {
         self.centralManager?.stopScan()
     }
     
-    // Starts the scanning for peripherals for 1 sec then stops
+    /**
+       Function that starts the scanning for peripherals for 1 sec then stops.
+    */
     @objc public func startScan() {
         scannedBLEDevices.removeAll()
         self.centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
@@ -173,8 +192,12 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    // Attempts to connect to a peripheral specified at the passed in index
-    // of scannedBLEDevices
+    /**
+       Function that attempts to connect to a peripheral specified at the passed in index
+       of scannedBLEDevices.
+     
+        - Parameter index: The index of the scannedBLEDevices.
+    */
     public func connect(index : Int) {
         // Make sure index is within limit of scanned devices
         if index < 0 || index > scannedBLEDevices.count {
@@ -188,16 +211,26 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
         }
     }
     
-    // Called to START retrieving measurement data from device
+    /**
+       Function that is called to START retrieving measurement data from device
+    */
     public func startGettingMeasurementData() {
         retrievingData = true
     }
     
-    // Called to STOP retrieving measurement data from device
+    /**
+       Function that is called to STOP retrieving measurement data from device
+    */
     public func stopGettingMeasurementData() {
         retrievingData = false
     }
     
+    /**
+        Function that displays a modal alert to the top of the view stack.
+     
+        - Parameter title: A title String to be displayed in the message.
+        - Parameter msg: A message String giving details of the alert.
+     */
     public func showAlertMessage(title: String, msg: String) {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
@@ -205,7 +238,7 @@ class BluetoothConnectionManager : NSObject, CBPeripheralDelegate, CBCentralMana
     }
     
     /**
-     Function that returns data received from bluetooth device.
+        Function that returns data received from bluetooth device.
      */
     public func getData() -> String {
         return self.data ?? ""
