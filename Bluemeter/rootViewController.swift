@@ -361,7 +361,7 @@ class rootViewController: UIViewController, ChartViewDelegate, MTKViewDelegate {
         // Display the time string to a label in our view controller
         self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", minutes, seconds, Int(milliseconds)!)
         // Display mesurement
-        let measurement = Double.random(in: 0 ..< 10)//processBluetoothData(dataString: bleManager.getData())
+        let measurement = processBluetoothData(dataString: bleManager.getData())
         updateMeasurementReading(measurement: measurement)
         let newDataEntry = ChartDataEntry(x: time/timeStepper.value*1000, y: measurement)
         self.measurementChart.updateChartView(with: newDataEntry, dataEntries: &self.measurementChart.chartDataEntry)
