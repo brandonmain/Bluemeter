@@ -22,4 +22,4 @@ Bluemeter’s key features include:
 -	Light and dark mode UI auto change based on users iOS display settings
 
 
-<img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="screenshot" height="500" />
+<img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="screenshot" title="Screenrecording of measuremnts being recieved and displayed."height="500" />
