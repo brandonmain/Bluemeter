@@ -21,5 +21,12 @@ Bluemeter’s key features include:
 -	BLE 4/5 compatible
 -	Light and dark mode UI auto change based on users iOS display settings
 
+<figure>
+  <picture>
+    <source media="(height: 500px)" srcset="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif"/>
+    <img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="An image">
+  </picture>
+  <figcaption>Screenrecording of measuremnts being recieved and displayed.</figcaption>
+</figure>
 
-<img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="screenshot" title="Screenrecording of measuremnts being recieved and displayed."height="500" />
+<img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="screenshot" height="500" />
