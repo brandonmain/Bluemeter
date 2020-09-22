@@ -3,4 +3,4 @@
 # Bluemeter
 
 
-![Screenshot](/img/5.8-inch-Screenshot-1.jpg | height=300)
+![Screenshot](/img/5.8-inch-Screenshot-1.jpg =250x250)
