@@ -24,8 +24,8 @@ Bluemeter is a Bluetooth enabled multimeter iOS application that allows a user t
 
 <p align="center">
   <img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="" height="500">
-  Screenrecording of measurements being recieved and displayed.
 </p>
+<p align="center">Screenrecording of measurements being recieved and displayed.</p>
 
 
 ## Installation
