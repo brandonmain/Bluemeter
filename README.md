@@ -29,7 +29,9 @@ Screenrecording of measurements being recieved and displayed.
 
 ## Installation
 1. Download or clone this repository.
-2. Open and run on your machine!
+2. Navigate to the project directory and run:
+`pod install`
+3. Open and run on your machine!
 
 ## Usage
 
