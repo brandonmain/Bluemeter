@@ -2,12 +2,10 @@
 
 # Bluemeter
 <p align="center">
-<div style="display: flex; align-items: center; justify-content: center;">
 <img src="/img/5.8-inch-Screenshot-1.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-2.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-3.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-4.jpg" alt="screenshot" height="350" />
-</div>
 </p>
 
 ***
