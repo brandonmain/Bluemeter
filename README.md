@@ -39,4 +39,5 @@ Important: You must have an Apple Developer account to deploy the app to your de
 1. To actually obtain measurements the app must be ran on an iOS 13+ device with BLE 4/5. 
 2. Connect your iOS device and select it as the target.
 3. Press the build and run button and the app will start running on your device. 
-4. 
+4. In the app, press: `Menu Icon > Devices > <Name_Of_Your_Device>`. This will connect your phone to your bluetooth device. A modal alert will pop up if you connect successfully.
+5. 
