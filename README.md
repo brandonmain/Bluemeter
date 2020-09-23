@@ -31,7 +31,12 @@ Screenrecording of measurements being recieved and displayed.
 1. Download or clone this repository.
 2. Navigate to the project directory and run:
 `pod install`
-3. Open and run on your machine!
+3. Open in Xcode and run on your machine!
+
+Important: You must have an Apple Developer account to deploy the app to your device. This [link](https://codewithchris.com/deploy-your-app-on-an-iphone/) has some good info on how to do this.
 
 ## Usage
-
+1. To actually obtain measurements the app must be ran on an iOS 13+ device with BLE 4/5. 
+2. Connect your iOS device and select it as the target.
+3. Press the build and run button and the app will start running on your device. 
+4. 
