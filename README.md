@@ -1,12 +1,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 # Bluemeter
-<p align="center">
+<div style="display: flex; align-items: center; justify-content: center;">
 <img src="/img/5.8-inch-Screenshot-1.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-2.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-3.jpg" alt="screenshot" height="350" />
 <img src="/img/5.8-inch-Screenshot-4.jpg" alt="screenshot" height="350" />
-</p>
+</div>
 
 ***
 
@@ -22,10 +22,8 @@ Bluemeter is a Bluetooth enabled multimeter iOS application that allows a user t
 
 ***
 
-<p align="center">
-  <img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="" height="500">
-</p>
-<p align="center">Screenrecording of measurements being recieved and displayed.</p>
+<img src="img/FB28503E-07B1-4D53-A4D1-8E08312F8C82_2_0_a.gif" alt="" height="500">
+Screenrecording of measurements being recieved and displayed.
 
 
 ## Installation
