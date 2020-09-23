@@ -40,4 +40,4 @@ Important: You must have an Apple Developer account to deploy the app to your de
 2. Connect your iOS device and select it as the target.
 3. Press the build and run button and the app will start running on your device. 
 4. In the app, press: `Menu Icon > Devices > <Name_Of_Your_Device>`. This will connect your phone to your bluetooth device. A modal alert will pop up if you connect successfully.
-5. 
+5. When sending data to the iOS device, delimit the data with a '|' character and always send the data without a decimal. For example, say you measured 42.689 Volts. You would send to the iOS Device: `|42689` 
